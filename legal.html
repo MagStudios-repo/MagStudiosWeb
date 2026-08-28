@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Información legal · MagStudios</title>
+  <meta name="description" content="Información legal de MagStudios, MagPlayer+ y sus publicaciones oficiales." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] }, colors: { soft: 'var(--soft)', muted: 'var(--muted)' } } } };</script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-sans antialiased">
+  <main class="legal-page mx-auto max-w-3xl px-5 py-12">
+    <a class="nav-link" href="index.html">← Volver a MagStudios</a>
+    <p class="eyebrow mt-12">INFORMACIÓN LEGAL</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight">MagPlayer+ es un reproductor neutral.</h1>
+    <p class="mt-6 text-soft leading-8">La aplicación permite reproducir archivos locales y listas que cada usuario incorpora por su cuenta. MagStudios no aloja, vende, activa ni distribuye listas, canales, películas, series o cuentas de terceros.</p>
+    <h2 class="mt-10 text-xl font-bold">Descargas y verificación</h2>
+    <p class="mt-3 text-soft leading-8">Esta es una alternativa pública de descarga para instalaciones nuevas o para usuarios a quienes el sistema les impide actualizar desde la app. Si MagPlayer+ ya está instalada, la actualización puede hacerse desde Ajustes y no es necesario descargar el APK en cada lanzamiento. Cuando se instala una versión nueva, no hace falta borrar la anterior: puede instalarse encima. El sitio ofrece además una comprobación SHA-256 local; el archivo seleccionado no se sube a nuestros servidores.</p>
+    <h2 class="mt-10 text-xl font-bold">Responsabilidad del usuario</h2>
+    <p class="mt-3 text-soft leading-8">Cada persona es responsable de los archivos, enlaces y listas que busca, agrega y reproduce, y debe contar con las autorizaciones que correspondan. La disponibilidad, legalidad y tratamiento de datos de una fuente externa dependen de su propio proveedor.</p>
+    <h2 class="mt-10 text-xl font-bold">Copias modificadas</h2>
+    <p class="mt-3 text-soft leading-8">No brindamos soporte para APK modificadas o reempaquetadas. Una huella SHA-256 diferente no corresponde al archivo oficial publicado para esa versión.</p>
+    <h2 class="mt-10 text-xl font-bold">Productos retirados</h2>
+    <p class="mt-3 text-soft leading-8">MagLinkTV y MagLinkTV+ están desactivadas y fuera de servicio. MagStudios no mantiene esas aplicaciones ni brinda soporte por copias alteradas, reempaquetadas o distribuidas por terceros. MagPlayer+ es nuestro producto vigente y el único de esta familia que recibe mantenimiento y soporte oficial.</p>
+    <h2 class="mt-10 text-xl font-bold">Contacto oficial</h2>
+    <p class="mt-3 text-soft leading-8">Soporte: <a href="mailto:soportemagstudiosoficial@gmail.com">soportemagstudiosoficial@gmail.com</a> · Código y proyectos: <a href="https://github.com/MagStudios-repo" target="_blank" rel="noopener">GitHub de MagStudios</a>.</p>
+    <p class="mt-12 text-muted text-sm">© <span id="year"></span> MagStudios · Software abierto para todos.</p>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

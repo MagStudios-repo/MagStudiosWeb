@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MagPlayer+ · MagStudios</title>
+  <meta name="description" content="Conocé las funciones reales de MagPlayer+: IPTV M3U y Xtream, biblioteca local, MultiView, grabación y reproducción para móvil, TV y Linux." />
+  <meta id="theme-color-meta" name="theme-color" content="#0a0e12" />
+  <link rel="icon" type="image/png" href="assets/logo-square.png" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('magplayer-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (_) { document.documentElement.dataset.theme = 'dark'; }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="studio-brand" href="index.html" aria-label="Volver a MagStudios">
+        <img class="studio-logo" src="assets/logo.png" alt="" width="559" height="447" />
+        <span>Mag<strong>Studios</strong></span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones de MagPlayer+">
+        <a href="#funciones">Funciones</a><a href="#plataformas">Plataformas</a><a href="#pantallas">Pantallas</a>
+      </nav>
+      <div class="nav-actions">
+        <details class="mobile-menu">
+          <summary aria-label="Abrir menú de navegación"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></summary>
+          <nav aria-label="Navegación móvil"><a href="#funciones">Funciones</a><a href="#plataformas">Plataformas</a><a href="#pantallas">Pantallas</a><a href="index.html#descargar">Descargar</a><a href="index.html">MagStudios</a></nav>
+        </details>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+          <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36A5.5 5.5 0 0 1 12.36 3.1 9.2 9.2 0 0 0 12 3Z"/></svg>
+          <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5 1.8 2.6L17 3.5l-.3 3.2 3.2-.3-1.1 3 2.6 1.8-2.6 1.8 1.1 3-3.2-.3.3 3.2-3.2-1.1L12 22l-1.8-2.6-3.2 1.1.3-3.2-3.2.3 1.1-3L2.6 12l2.6-1.8-1.1-3 3.2.3L7 4.3l3.2 1.1L12 2Z"/></svg>
+        </button>
+        <a class="button button-primary top-download" href="index.html#descargar">Descargar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="product-detail-hero page-shell">
+      <div class="detail-identity">
+        <div class="product-visual">
+          <div class="visual-toolbar"><span></span><span></span><span></span><b>MagPlayer+</b></div>
+          <img src="assets/capturas/mobile/01-inicio.jpg" alt="Pantalla de inicio de MagPlayer+ en un teléfono" width="576" height="1280" fetchpriority="high" />
+          <div class="visual-float">
+            <img src="assets/capturas/mobile/03-mis-listas.jpg" alt="Pantalla Mis listas de MagPlayer+ en un teléfono" width="576" height="1280" loading="lazy" />
+            <span>Mis listas · Móvil</span>
+          </div>
+        </div>
+      </div>
+      <div class="detail-intro">
+        <p class="eyebrow"><span class="pulse"></span> Centro multimedia open source</p>
+        <h1>Todo lo que reproducís.<br /><em>En una sola app.</em></h1>
+        <p>MagPlayer+ fue creada desde cero para reunir listas IPTV y archivos del dispositivo sin tratar al móvil, la televisión y el escritorio como la misma pantalla estirada.</p>
+        <div class="hero-actions">
+          <a id="download-button" class="button button-primary button-large" href="index.html#descargar">Descargar APK oficial <span aria-hidden="true">↓</span></a>
+          <button class="button button-linux button-large" type="button" disabled aria-label="Descarga para Linux basado en Debian no disponible todavía"><img src="assets/platforms/debian.png" alt="" width="20" height="20" />Linux basado en Debian <span>Próximamente</span></button>
+          <a class="button button-quiet button-large" href="index.html">Volver a MagStudios</a>
+        </div>
+        <div class="detail-version">Versión disponible <strong id="version-name">consultando…</strong><span id="release-code">—</span><span id="release-status">Buscando publicación oficial</span></div>
+      </div>
+    </section>
+
+    <section id="funciones" class="section page-shell detail-section">
+      <header class="section-heading centered-heading"><p class="eyebrow">Funciones actuales</p><h2>Construida alrededor de tu contenido.</h2><p>Estas capacidades están respaldadas por pantallas, controladores y servicios presentes en la aplicación actual.</p></header>
+      <div class="capability-grid">
+        <article><span>01</span><h3>Listas a tu manera</h3><p>Importá enlaces M3U o M3U8, servidores Xtream con usuario y contraseña, archivos locales y TXT con varios candidatos.</p></article>
+        <article><span>02</span><h3>Directo y VOD separados</h3><p>Los canales conservan sus categorías y EPG; películas y series aparecen en un catálogo con temporadas y episodios cuando la fuente los ofrece.</p></article>
+        <article><span>03</span><h3>Biblioteca local</h3><p>Indexá música y vídeos por carpetas, álbumes y artistas. Gestioná favoritos, playlists, búsqueda y cola de reproducción.</p></article>
+        <article><span>04</span><h3>Motor adecuado</h3><p>ExoPlayer y LibVLC trabajan en Android y Android TV. Linux usa mpv. El modo automático cambia al respaldo si el motor activo falla.</p></article>
+        <article><span>05</span><h3>MultiView</h3><p>Abrí dos o cuatro canales compatibles a la vez. Cada ventana conserva su motor y sólo la ventana seleccionada emite audio.</p></article>
+        <article><span>06</span><h3>Grabaciones en Biblioteca</h3><p>Grabá un canal compatible en Android mientras seguís usando el dispositivo. Al terminar, la aplicación indexa el archivo entre tus vídeos.</p></article>
+        <article><span>07</span><h3>Connect por red local</h3><p>Encontrá dispositivos MagPlayer+ en la misma red, controlá la reproducción y transferí la sesión con emparejamiento visible.</p></article>
+        <article><span>08</span><h3>Protección y pistas</h3><p>Aplicá control parental con PIN y detección de contenido. Elegí pistas y personalizá tamaño, posición y sincronización de subtítulos.</p></article>
+      </div>
+    </section>
+
+    <section id="plataformas" class="section platform-section">
+      <div class="page-shell">
+        <header class="section-heading centered-heading"><p class="eyebrow">Tres experiencias</p><h2>No es una interfaz estirada.</h2><p>Cada modo tiene navegación y controles propios para su distancia y forma de uso.</p></header>
+        <div class="platform-grid">
+          <article><div class="platform-symbol android"><img src="assets/platforms/android.svg" alt="Android" width="64" height="64" /></div><h3>Android</h3><p>Interacción táctil, navegación inferior, biblioteca completa y control de otros dispositivos.</p></article>
+          <article><div class="platform-symbol android-tv"><img src="assets/platforms/android-tv.svg" alt="Android TV" width="48" height="48" /></div><h3>Android TV</h3><p>Foco visible, navegación por D-pad, controles a distancia y reproducción independiente.</p></article>
+          <article><div class="platform-symbol debian"><img src="assets/platforms/debian.png" alt="Debian" width="64" height="64" /></div><h3>Linux basado en Debian</h3><p>Diseño de escritorio, teclado y mouse, reproducción con mpv y participación en Connect para distribuciones basadas en Debian.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pantallas" class="section page-shell screens-section">
+      <header class="section-heading centered-heading"><p class="eyebrow">Pantallas actuales</p><h2>MagPlayer+ en cada dispositivo.</h2><p>Interfaz real de la versión actual, organizada por el recorrido de uso y adaptada a cada formato de pantalla.</p></header>
+
+      <section class="gallery-group" aria-labelledby="mobile-gallery-title">
+        <header class="gallery-heading"><div><p class="eyebrow">Móvil</p><h3 id="mobile-gallery-title">Diseñada para tocar y seguir.</h3></div><p>Navegación inferior, controles táctiles y las mismas fuentes disponibles desde el teléfono.</p></header>
+        <div class="mobile-gallery">
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/01-inicio.jpg" alt="Inicio de MagPlayer+ en un teléfono" width="576" height="1280" /></div><figcaption>Inicio</figcaption></figure>
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/02-catalogo.jpg" alt="Catálogo de MagPlayer+ en un teléfono" width="576" height="1280" /></div><figcaption>Catálogo</figcaption></figure>
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/03-mis-listas.jpg" alt="Mis listas de MagPlayer+ en un teléfono" width="576" height="1280" /></div><figcaption>Mis listas</figcaption></figure>
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/04-biblioteca.jpg" alt="Biblioteca de MagPlayer+ en un teléfono" width="576" height="1280" /></div><figcaption>Biblioteca</figcaption></figure>
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/05-ajustes.jpg" alt="Ajustes de MagPlayer+ en un teléfono" width="576" height="1280" /></div><figcaption>Ajustes</figcaption></figure>
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/06-gestionar-listas.jpg" alt="Gestión de listas IPTV en un teléfono" width="576" height="1280" /></div><figcaption>Gestión de listas</figcaption></figure>
+          <figure><div class="phone-shot"><img loading="lazy" src="assets/capturas/mobile/07-anadir-enlace.jpg" alt="Formulario para añadir una lista mediante enlace en un teléfono" width="576" height="1280" /></div><figcaption>Añadir mediante enlace</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gallery-group" aria-labelledby="desktop-gallery-title">
+        <header class="gallery-heading"><div><p class="eyebrow">Escritorio y TV</p><h3 id="desktop-gallery-title">Más espacio, la misma lógica.</h3></div><p>Vistas horizontales para Linux y pantallas grandes, con navegación lateral y contenido legible a distancia.</p></header>
+        <div class="desktop-gallery">
+          <figure class="is-featured"><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/01-inicio.png" alt="Inicio de MagPlayer+ en modo escritorio" width="1908" height="991" /></div><figcaption>Inicio y acceso a fuentes</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/02-catalogo.png" alt="Catálogo de MagPlayer+ en modo escritorio" width="1908" height="991" /></div><figcaption>Catálogo</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/03-mis-listas.png" alt="Mis listas de MagPlayer+ en modo escritorio" width="1908" height="991" /></div><figcaption>Mis listas y MultiView</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/04-biblioteca.png" alt="Biblioteca de MagPlayer+ en modo escritorio" width="1908" height="991" /></div><figcaption>Biblioteca</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/05-ajustes.png" alt="Ajustes de MagPlayer+ en modo escritorio" width="1908" height="991" /></div><figcaption>Ajustes</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/06-gestionar-listas.png" alt="Gestión de listas IPTV en MagPlayer+ para escritorio" width="1908" height="991" /></div><figcaption>Gestión de listas IPTV</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/07-anadir-enlace.png" alt="Formulario para añadir una lista mediante enlace" width="1908" height="991" /></div><figcaption>Añadir mediante enlace</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/08-anadir-servidor.png" alt="Formulario para añadir un servidor IPTV" width="1908" height="991" /></div><figcaption>Conectar un servidor</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/09-busqueda-global.png" alt="Búsqueda global de MagPlayer+ en modo escritorio" width="1908" height="991" /></div><figcaption>Búsqueda global</figcaption></figure>
+          <figure><div class="desktop-shot"><img loading="lazy" src="assets/capturas/desktop/10-connect.png" alt="Selector de dispositivos MagPlayer+ Connect" width="1908" height="991" /></div><figcaption>MagPlayer+ Connect</figcaption></figure>
+        </div>
+      </section>
+    </section>
+
+    <section class="section page-shell detail-cta"><img src="assets/logo.png" alt="" width="559" height="447" loading="lazy" /><div><p class="eyebrow">MagPlayer+ actual</p><h2>Tu contenido permanece bajo tu control.</h2><p>Sin listas preinstaladas, sin vender fuentes y sin alojar contenido de terceros.</p></div><a class="button button-primary button-large" href="index.html#descargar">Descargar</a></section>
+  </main>
+
+  <footer class="footer"><div class="page-shell footer-grid"><div><a class="studio-brand footer-brand" href="index.html"><img class="studio-logo" src="assets/logo.png" alt="" width="559" height="447" /><span>Mag<strong>Studios</strong></span></a><p>Estudio independiente de aplicaciones open source para móvil, televisión y escritorio.</p></div><nav aria-label="MagPlayer+"><a href="#funciones">Funciones</a><a href="#plataformas">Plataformas</a><a href="#pantallas">Pantallas</a></nav><nav aria-label="Información y contacto"><a href="https://github.com/MagStudios-repo" target="_blank" rel="noopener">GitHub Oficial</a><a href="mailto:soportemagstudiosoficial@gmail.com">Correo de soporte</a><a href="index.html#catalogo">Catálogo de Apps</a><a href="legal.html">Información legal</a><span>© <span id="year"></span> MagStudios</span></nav></div></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
