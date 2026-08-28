@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MagStudios · Apps open source para móvil, TV y escritorio</title>
-  <meta name="description" content="Catálogo oficial de aplicaciones open source de MagStudios para móvil, Android TV y escritorio. Descargá MagPlayer+ y conocé nuestros proyectos." />
+  <meta name="description" content="Catálogo oficial de aplicaciones open source de MagStudios para móvil, Android TV y escritorio. Conocé MagPlayer+ y nuestros proyectos." />
   <meta id="theme-color-meta" name="theme-color" content="#0a0e12" />
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <script>
@@ -88,7 +88,7 @@
           <div class="product-title-row">
             <img class="app-icon" src="assets/logo.png" alt="Logo de MagStudios" width="559" height="447" />
             <div>
-              <span class="status available"><i></i> Disponible · Oficial</span>
+              <span class="status available"><i></i> Canal oficial Android · F-Droid</span>
               <h3>MagPlayer+</h3>
             </div>
           </div>
@@ -103,9 +103,10 @@
             <li><b>Subtítulos y pistas</b><span>Elegí pistas y ajustá idioma, tamaño, posición y sincronización.</span></li>
             <li><b>Control parental</b><span>Protección con PIN y detección de categorías, títulos y descripciones.</span></li>
           </ul>
-          <div class="release-meta" aria-live="polite"><span>Última versión oficial <strong id="version-name">consultando…</strong></span><span id="release-code">—</span><span id="release-status">Buscando publicación oficial</span></div>
+          <div class="release-meta"><span>Distribución oficial Android <strong>F-Droid</strong></span><span>Próximamente</span></div>
           <div class="product-actions" id="descargar">
-            <a id="download-button" class="button button-primary button-large" href="#">Descargar APK oficial <span aria-hidden="true">↓</span></a>
+            <button class="button button-primary button-large" type="button" disabled aria-label="MagPlayer+ estará disponible oficialmente en F-Droid próximamente">Disponible próximamente en F-Droid</button>
+            <a class="button button-quiet button-large" href="https://github.com/MagStudios-repo/MagPlayerPlus" target="_blank" rel="noopener">Código fuente <span aria-hidden="true">↗</span></a>
             <button class="button button-linux button-large" type="button" disabled aria-label="Descarga para Linux basado en Debian no disponible todavía"><img src="assets/platforms/debian.png" alt="" width="20" height="20" />Linux basado en Debian <span>Próximamente</span></button>
             <a class="button button-quiet button-large" href="magplayer.html">Conocé MagPlayer+ <span aria-hidden="true">→</span></a>
           </div>
@@ -134,14 +135,6 @@
           <article class="retired-card"><div class="retired-icon">ML+</div><div><span class="status retired"><i></i> Retirada · Offline</span><h3>MagLinkTV+</h3><p>Aplicación original descontinuada. Sus servicios oficiales están desactivados.</p></div></article>
         </div>
         <aside class="security-notice"><strong>Aviso sobre copias modificadas</strong><p>Personas ajenas al proyecto original realizaron ingeniería inversa y distribuyeron modificaciones no autorizadas de estas aplicaciones. Por seguridad, MagStudios decidió desactivarlas.</p><p><b>MagStudios no mantiene MagLinkTV ni MagLinkTV+, no ofrece soporte y no asume responsabilidad por fallos técnicos, daños o problemas provocados por versiones modificadas o distribuidas por terceros.</b></p><span>El único producto actual, mantenido y con soporte oficial es MagPlayer+.</span></aside>
-      </div>
-    </section>
-
-    <!-- ── Verificación de Integridad de Paquete APK ── -->
-    <section id="verificar" class="section verify-section">
-      <div class="page-shell verify-layout">
-        <div><p class="eyebrow">Seguridad de publicación</p><h2>Verificá que tu APK sea oficial.</h2><p>Calculá la firma SHA-256 dentro de tu propio navegador para validar que el paquete no fue alterado por terceros. El archivo no se sube ni sale de tu dispositivo.</p><div class="official-hash"><span>SHA-256 Oficial Publicado</span><code id="official-hash">Consultando…</code><button id="copy-hash" class="copy-button" type="button">Copiar</button></div></div>
-        <div><label id="dropzone" class="dropzone" for="apk-file" tabindex="0"><span class="drop-icon">#</span><strong>Elegí o soltá el archivo APK</strong><small>Se compara al instante con el registro oficial de MagStudios.</small></label><input id="apk-file" type="file" accept=".apk,application/vnd.android.package-archive" hidden /><div id="verify-result" class="verify-result" aria-live="polite"></div></div>
       </div>
     </section>
 
