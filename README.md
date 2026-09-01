@@ -28,6 +28,12 @@ es responsable de las fuentes y archivos que incorpora a su biblioteca.
 El código fuente de MagPlayer+ tendrá su propio repositorio público en
 MagStudios. Este repositorio contiene únicamente el sitio oficial.
 
+Las descargas oficiales de MagPlayer+ se inician desde este sitio. Una vez
+instalada, la aplicación comprueba y descarga sus actualizaciones desde
+**Ajustes > Actualizaciones**. Los APK se alojan junto al código de la app para
+que sean verificables, pero MagStudios no distribuye enlaces mediante mirrors,
+Drive, Mega ni otras tiendas.
+
 ## Otros proyectos
 
 ### MagLinkTV y MagLinkTV+

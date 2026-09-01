@@ -31,12 +31,12 @@
         <span>Mag<strong>Studios</strong></span>
       </a>
       <nav class="nav-links" aria-label="Secciones principales">
-        <a href="#destacado">MagPlayer+</a><a href="#laboratorio">En desarrollo</a><a href="#retiradas">Apps retiradas</a><a href="#apoyar">Apoyar</a><a href="#verificar">Verificar APK</a>
+        <a href="#destacado">MagPlayer+</a><a href="#roadmap">Roadmap</a><a href="#apoyar">Apoyar</a><a href="#verificar">Verificar APK</a>
       </nav>
       <div class="nav-actions">
         <details class="mobile-menu">
           <summary aria-label="Abrir menú de navegación"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></summary>
-          <nav aria-label="Navegación móvil"><a href="#destacado">MagPlayer+</a><a href="#laboratorio">En desarrollo</a><a href="#retiradas">Apps retiradas</a><a href="#apoyar">Apoyar</a><a href="#verificar">Verificar APK</a></nav>
+          <nav aria-label="Navegación móvil"><a href="#destacado">MagPlayer+</a><a href="#roadmap">Roadmap</a><a href="#apoyar">Apoyar</a><a href="#verificar">Verificar APK</a></nav>
         </details>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
           <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36A5.5 5.5 0 0 1 12.36 3.1 9.2 9.2 0 0 0 12 3Z"/></svg>
@@ -55,7 +55,7 @@
         <p class="hero-lead"><strong>Somos MagStudios</strong>, un estudio independiente que crea aplicaciones open source para móvil, Android TV y escritorio. Desarrollamos herramientas gratuitas, transparentes y pensadas para devolverle el control a quien las usa.</p>
         <div class="hero-actions">
           <a class="button button-primary button-large" href="#destacado">Conocer nuestros trabajos</a>
-          <a class="button button-quiet button-large" href="#laboratorio">Ver lo que viene</a>
+          <a class="button button-quiet button-large" href="#roadmap">Ver el Roadmap</a>
         </div>
       </div>
       <div class="studio-manifesto" aria-label="Manifiesto de MagStudios">
@@ -88,7 +88,7 @@
           <div class="product-title-row">
             <img class="app-icon" src="assets/logo.png" alt="Logo de MagStudios" width="559" height="447" />
             <div>
-              <span class="status available"><i></i> Canal oficial Android · F-Droid</span>
+              <span class="status available"><i></i> Producto Insignia · Open Source</span>
               <h3>MagPlayer+</h3>
             </div>
           </div>
@@ -103,39 +103,193 @@
             <li><b>Subtítulos y pistas</b><span>Elegí pistas y ajustá idioma, tamaño, posición y sincronización.</span></li>
             <li><b>Control parental</b><span>Protección con PIN y detección de categorías, títulos y descripciones.</span></li>
           </ul>
-          <div class="release-meta"><span>Distribución oficial Android <strong>F-Droid</strong></span><span>Próximamente</span></div>
-          <div class="product-actions" id="descargar">
-            <button class="button button-primary button-large" type="button" disabled aria-label="MagPlayer+ estará disponible oficialmente en F-Droid próximamente">Disponible próximamente en F-Droid</button>
-            <a class="button button-quiet button-large" href="https://github.com/MagStudios-repo/MagPlayerPlus" target="_blank" rel="noopener">Código fuente <span aria-hidden="true">↗</span></a>
-            <button class="button button-linux button-large" type="button" disabled aria-label="Descarga para Linux basado en Debian no disponible todavía"><img src="assets/platforms/debian.png" alt="" width="20" height="20" />Linux basado en Debian <span>Próximamente</span></button>
-            <a class="button button-quiet button-large" href="magplayer.html">Conocé MagPlayer+ <span aria-hidden="true">→</span></a>
+          <div class="release-meta"><span>Distribución oficial <strong>MagStudios</strong></span><span>Versión 3.0.1</span></div>
+          <div class="download-counter" data-download-counter aria-live="polite" aria-busy="true">
+            <span class="download-counter-label">Descargas oficiales</span>
+            <strong class="download-counter-value" data-download-count>Consultando…</strong>
+            <span class="download-counter-context" data-download-context>de las APK publicadas</span>
           </div>
+
+          <div class="download-stack" id="descargar">
+            <!-- Fila 1: 3 versiones APK juntas -->
+            <div class="apk-download-grid">
+              <a class="button button-primary" href="https://github.com/MagStudios-repo/MagPlayerPlus/releases/download/v3.0.1/app-arm64-v8a-release.apk" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                <span>ARM64 <small>(64-bit)</small></span>
+              </a>
+              <a class="button button-primary" href="https://github.com/MagStudios-repo/MagPlayerPlus/releases/download/v3.0.1/app-armeabi-v7a-release.apk" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                <span>ARMv7 <small>(32-bit)</small></span>
+              </a>
+              <a class="button button-primary" href="https://github.com/MagStudios-repo/MagPlayerPlus/releases/download/v3.0.1/app-x86_64-release.apk" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                <span>x86_64 <small>(PC/Emu)</small></span>
+              </a>
+            </div>
+
+            <!-- Fila 2: Linux ocupando el ancho completo de los 3 botones -->
+            <button class="button-linux-full" type="button" disabled aria-label="Descarga para Linux basado en Debian no disponible todavía">
+              <img src="assets/platforms/debian.png" alt="" width="20" height="20" />
+              <span>Linux basado en Debian (Ubuntu / Mint)</span>
+              <span class="badge-tag">Próximamente</span>
+            </button>
+
+            <!-- Fila 3: 2 botones secundarios debajo de Linux -->
+            <div class="secondary-actions-grid">
+              <a class="button button-quiet" href="https://github.com/MagStudios-repo/MagPlayerPlus" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                <span>Código fuente <span aria-hidden="true">↗</span></span>
+              </a>
+              <a class="button button-quiet" href="magplayer.html">
+                <span>Conocé MagPlayer+ <span aria-hidden="true">→</span></span>
+              </a>
+            </div>
+          </div>
+
           <p class="content-disclaimer">MagPlayer+ no aloja, vende ni distribuye canales, listas o contenido. Reproduce los archivos y fuentes que cada persona incorpora por su cuenta.</p>
         </div>
       </article>
     </section>
 
-    <!-- ── Laboratorio / Próximos Proyectos Detalle ── -->
-    <section id="laboratorio" class="section page-shell">
-      <header class="section-heading"><p class="eyebrow">En el laboratorio</p><h2>Proyectos en desarrollo.</h2><p>Próximas herramientas del catálogo. Compartiremos fechas e instaladores cuando cada app alcance su versión preliminar.</p></header>
-      <div class="future-grid">
-        <article class="future-card send"><div class="future-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h11m0 0-4-4m4 4-4 4M17 17H6m0 0 4 4m-4-4 4-4" /></svg></div><span class="status building"><i></i> En desarrollo</span><h3>MagSend</h3><p>Transferencia directa de archivos entre dispositivos conectados a la misma red WiFi. Sin nube, sin enlaces que caducan y con envío por bloques para archivos grandes.</p><ul><li>Descubrimiento automático</li><li>Móvil, TV y escritorio</li><li>Transferencias reanudables</li></ul></article>
-        <article class="future-card search"><div class="future-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3" /><path d="M3 9h18" /><circle cx="11" cy="14" r="2.5" /><path d="m13 16 2.5 2.5" /></svg></div><span class="status concept"><i></i> Próximamente</span><h3>MagSearch</h3><p>Un navegador pensado desde cero para Android TV: lectura a distancia, navegación completa con D-pad y una interfaz que no obliga a simular un mouse.</p><ul><li>Pestañas adaptadas a TV</li><li>Control por mando</li><li>Privacidad como configuración inicial</li></ul></article>
-        <article class="future-card chat"><div class="future-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 17H6l-3 3v-5.5A7 7 0 0 1 5 5a7 7 0 0 1 10.7 1.2" /><path d="M21 13a6 6 0 0 1-6 6h-1.5L10 21v-8a6 6 0 1 1 11 0Z" /><path d="M14 13h.01M17 13h.01" /></svg></div><span class="status concept"><i></i> Investigación</span><h3>MagChat+</h3><p>Mensajería descentralizada sin una base de datos central. Cerca, conectará personas mediante Bluetooth y WiFi Direct; a distancia, usará transporte cifrado por internet sin convertir a MagStudios en dueño de las conversaciones.</p><ul><li>Mensajes y llamadas cifradas de extremo a extremo</li><li>Audio y videollamadas con cambio automático de transporte</li><li>Transcripción y traducción en vivo con modelos de IA locales</li><li>Identidad y datos bajo control de cada persona</li></ul></article>
-      </div>
-      <div class="open-promise"><span>Compromiso MagStudios</span><strong>Más aplicaciones. Todas open source. Todas 100% gratuitas.</strong></div>
-    </section>
+    <!-- ── Roadmap de MagStudios (Vertical Timeline) ── -->
+    <section id="roadmap" class="section page-shell" aria-label="Roadmap y proyectos de MagStudios">
+      <header class="section-heading"><p class="eyebrow">Hoja de ruta</p><h2>Roadmap de desarrollo.</h2><p>El plan de evolución de MagStudios: nuestro producto insignia en mejora continua y las próximas herramientas del catálogo.</p></header>
 
-    <!-- ── Archivo del Estudio / Seguridad ── -->
-    <section id="retiradas" class="section retired-section">
-      <div class="page-shell">
-        <header class="section-heading retired-heading"><p class="eyebrow danger">Archivo del estudio</p><h2>MagLinkTV y MagLinkTV+ están fuera de servicio.</h2><p>Ambas aplicaciones fueron desactivadas completamente y permanecen offline. No deben descargarse, instalarse ni usarse desde copias de terceros.</p></header>
-        <div class="retired-grid">
-          <article class="retired-card"><div class="retired-icon">ML</div><div><span class="status retired"><i></i> Retirada · Offline</span><h3>MagLinkTV</h3><p>Aplicación original descontinuada. Sus servicios oficiales están desactivados.</p></div></article>
-          <article class="retired-card"><div class="retired-icon">ML+</div><div><span class="status retired"><i></i> Retirada · Offline</span><h3>MagLinkTV+</h3><p>Aplicación original descontinuada. Sus servicios oficiales están desactivados.</p></div></article>
-        </div>
-        <aside class="security-notice"><strong>Aviso sobre copias modificadas</strong><p>Personas ajenas al proyecto original realizaron ingeniería inversa y distribuyeron modificaciones no autorizadas de estas aplicaciones. Por seguridad, MagStudios decidió desactivarlas.</p><p><b>MagStudios no mantiene MagLinkTV ni MagLinkTV+, no ofrece soporte y no asume responsabilidad por fallos técnicos, daños o problemas provocados por versiones modificadas o distribuidas por terceros.</b></p><span>El único producto actual, mantenido y con soporte oficial es MagPlayer+.</span></aside>
+      <div class="timeline-container">
+        <!-- Hito 1: MagPlayer+ (Activo) -->
+        <article class="timeline-item is-active">
+          <div class="timeline-marker" aria-hidden="true">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="status available"><i></i> Producto Insignia · Activo (v3.0.1)</span>
+              <span class="timeline-version-tag">Lanzamiento Continuo</span>
+            </div>
+            <h3>MagPlayer+</h3>
+            <p class="timeline-lead">El centro multimedia open source de MagStudios. Diseñado especialmente para pantallas táctiles, Smart TVs y escritorio sin publicidad ni intermediarios.</p>
+            <div class="timeline-features-grid">
+              <div class="timeline-feature-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>Actualizador in-app</strong> con verificación SHA-256</span>
+              </div>
+              <div class="timeline-feature-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>Motor dual</strong> ExoPlayer + LibVLC en Android</span>
+              </div>
+              <div class="timeline-feature-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>Biblioteca local</strong> con Favoritos y audio</span>
+              </div>
+              <div class="timeline-feature-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                <span><strong>MultiView</strong> (2-4 canales) y grabación</span>
+              </div>
+              <div class="timeline-feature-item in-progress">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/></svg>
+                <span><strong>En desarrollo:</strong> Versión nativa Linux (Debian)</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hito 2: MagSend -->
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h11m0 0-4-4m4 4-4 4M17 17H6m0 0 4 4m-4-4 4-4"/></svg>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="status building"><i></i> En desarrollo · Beta Interna</span>
+              <span class="timeline-version-tag">Fase 02</span>
+            </div>
+            <h3>MagSend</h3>
+            <p class="timeline-lead">Transferencia directa de archivos de alta velocidad entre dispositivos conectados a la misma red Wi-Fi. Sin límites de peso, sin almacenamiento en la nube y sin compresión.</p>
+            <div class="timeline-features-grid">
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Descubrimiento automático</strong> mDNS en red local</span>
+              </div>
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Protocolo por bloques</strong> con reanudación ante cortes</span>
+              </div>
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Multi-plataforma:</strong> Android TV, móvil y PC</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hito 3: MagSearch -->
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/><circle cx="11" cy="14" r="2.5"/><path d="m13 16 2.5 2.5"/></svg>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="status concept"><i></i> Próximamente · Arquitectura</span>
+              <span class="timeline-version-tag">Fase 03</span>
+            </div>
+            <h3>MagSearch</h3>
+            <p class="timeline-lead">Un navegador web diseñado desde cero para Android TV. Navegación fluida 100% mediante control remoto (D-Pad), tipografía optimizada para lectura a distancia y bloqueo integrado de rastreadores.</p>
+            <div class="timeline-features-grid">
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Navegación espacial D-pad</strong> sin puntero virtual</span>
+              </div>
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Modo lectura inmersivo</strong> para TV y sala</span>
+              </div>
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Privacidad estricta</strong> sin registros externos</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hito 4: MagChat+ -->
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">
+            <div class="timeline-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 17H6l-3 3v-5.5A7 7 0 0 1 5 5a7 7 0 0 1 10.7 1.2"/><path d="M21 13a6 6 0 0 1-6 6h-1.5L10 21v-8a6 6 0 1 1 11 0Z"/><path d="M14 13h.01M17 13h.01"/></svg>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="status concept"><i></i> Investigación · Protocolo P2P</span>
+              <span class="timeline-version-tag">Fase 04</span>
+            </div>
+            <h3>MagChat+</h3>
+            <p class="timeline-lead">Mensajería descentralizada y cifrada de extremo a extremo sin base de datos central. Red mallada (Mesh) vía Bluetooth/Wi-Fi Direct en cercanía y transporte cifrado a distancia.</p>
+            <div class="timeline-features-grid">
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Sin teléfono:</strong> cuentas por llave criptográfica</span>
+              </div>
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Red Mesh:</strong> comunicación sin internet en cercanía</span>
+              </div>
+              <div class="timeline-feature-item planned">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span><strong>Soberanía total:</strong> llamadas y textos cifrados</span>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
+
+      <div class="open-promise"><span>Compromiso MagStudios</span><strong>Más aplicaciones. Todas open source. Todas 100% gratuitas.</strong></div>
     </section>
 
     <!-- ── Apoyo Voluntario ── -->
@@ -168,9 +322,40 @@
         </div>
       </div>
     </section>
+
+    <!-- ── Verificador de APK (SHA-256) ── -->
+    <section id="verificar" class="section verify-section" aria-label="Verificador de seguridad de APK">
+      <div class="page-shell verify-layout">
+        <div>
+          <p class="eyebrow">Seguridad e integridad</p>
+          <h2>Verificá tu APK antes de instalarlo.</h2>
+          <p>
+            Comprobá la autenticidad de cualquier paquete de MagPlayer+. Seleccioná
+            o arrastrá el archivo <code>.apk</code> descargado para calcular su huella SHA-256
+            localmente en tu navegador sin subirlo a ningún servidor.
+          </p>
+          <div class="official-hash">
+            <span>Repositorio oficial de lanzamientos</span>
+            <button class="copy-button" type="button" id="copy-repo-btn" aria-label="Copiar enlace del repositorio oficial">Copiar enlace</button>
+            <code id="official-repo-link">https://github.com/MagStudios-repo/MagPlayerPlus/releases</code>
+          </div>
+        </div>
+
+        <div>
+          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Arrastrá o seleccioná un APK para verificar su hash SHA-256">
+            <input type="file" id="apk-input" accept=".apk" style="display: none;" />
+            <div class="drop-icon" aria-hidden="true">#</div>
+            <strong>Arrastrá tu archivo APK aquí</strong>
+            <small>o hacé clic para seleccionarlo desde tu dispositivo</small>
+          </div>
+          <div id="verify-result" class="verify-result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"><div class="page-shell footer-grid"><div><a class="studio-brand footer-brand" href="#inicio"><img class="studio-logo" src="assets/logo.png" alt="" width="559" height="447" /><span>Mag<strong>Studios</strong></span></a><p>Estudio independiente creador de aplicaciones open source para móvil, televisión y escritorio.</p></div><nav aria-label="Redes y contacto de MagStudios"><a href="https://github.com/MagStudios-repo" target="_blank" rel="noopener">GitHub Oficial</a><a href="mailto:soportemagstudiosoficial@gmail.com">soportemagstudiosoficial@gmail.com</a><a href="https://www.instagram.com/magstudios_oficial" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/MagStudios_ok" target="_blank" rel="noopener">X</a><a href="https://t.me/+Wua5dPKBPJEzNmIx" target="_blank" rel="noopener">Telegram</a></nav><nav aria-label="Información"><a href="#catalogo">Catálogo</a><a href="#destacado">MagPlayer+</a><a href="#apoyar">Apoyar el proyecto</a><a href="#retiradas">Apps retiradas</a><a href="legal.html">Información legal</a><span>© <span id="year"></span> MagStudios</span></nav></div></footer>
+
+  <footer class="footer"><div class="page-shell footer-grid"><div><a class="studio-brand footer-brand" href="#inicio"><img class="studio-logo" src="assets/logo.png" alt="" width="559" height="447" /><span>Mag<strong>Studios</strong></span></a><p>Estudio independiente creador de aplicaciones open source para móvil, televisión y escritorio.</p></div><nav aria-label="Redes y contacto de MagStudios"><a href="https://github.com/MagStudios-repo" target="_blank" rel="noopener">GitHub Oficial</a><a href="mailto:soportemagstudiosoficial@gmail.com">soportemagstudiosoficial@gmail.com</a><a href="https://www.instagram.com/magstudios_oficial" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/MagStudios_ok" target="_blank" rel="noopener">X</a><a href="https://t.me/+Wua5dPKBPJEzNmIx" target="_blank" rel="noopener">Telegram</a></nav><nav aria-label="Información"><a href="#destacado">MagPlayer+</a><a href="#roadmap">Roadmap</a><a href="#apoyar">Apoyar el proyecto</a><a href="#verificar">Verificar APK</a><a href="legal.html">Información legal</a><span>© <span id="year"></span> MagStudios</span></nav></div></footer>
   <div id="toast" class="toast" role="status"></div>
   <script src="js/main.js"></script>
 </body>

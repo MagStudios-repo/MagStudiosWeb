@@ -748,6 +748,55 @@ h1 em {
 }
 
 .release-meta strong { color: var(--primary); font-weight: 700; }
+.download-counter {
+  min-height: 46px;
+  margin: -8px 0 20px;
+  padding: 10px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 16px;
+  border-left: 2px solid var(--primary);
+  background: color-mix(in srgb, var(--primary-soft) 48%, var(--surface-soft));
+  color: var(--soft);
+}
+
+.download-counter-label,
+.download-counter-context {
+  font: 500 0.7rem "DM Mono";
+  letter-spacing: 0.01em;
+}
+
+.download-counter-value {
+  grid-row: span 2;
+  grid-column: 2;
+  color: var(--ink);
+  font: 800 clamp(1rem, 2vw, 1.35rem) "Sora";
+  font-variant-numeric: tabular-nums;
+}
+
+.download-counter-context { color: var(--muted); }
+.download-counter[aria-busy="true"] .download-counter-value {
+  min-width: 7ch;
+  border-radius: var(--radius-xs);
+  color: transparent;
+  background: linear-gradient(90deg, var(--surface-high), var(--surface-highest), var(--surface-high));
+  background-size: 200% 100%;
+  animation: download-counter-loading 1.4s ease-in-out infinite;
+}
+
+@keyframes download-counter-loading {
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-counter[aria-busy="true"] .download-counter-value { animation: none; }
+}
+
+@media (max-width: 480px) {
+  .download-counter { gap: 3px 10px; padding: 10px 12px; }
+  .download-counter-label, .download-counter-context { font-size: 0.65rem; }
+}
 .content-disclaimer { margin: 16px 0 0; color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
 
 /* ── Retired Apps Section (Archivo del Estudio) ── */
@@ -809,79 +858,263 @@ h1 em {
   font-weight: 800;
 }
 
-/* ── In the Lab / Upcoming Projects ── */
-.future-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  align-items: stretch;
-}
-
-.future-card {
-  position: relative;
-  min-height: 440px;
-  padding: 30px;
-  overflow: hidden;
+/* ── Structured Download Stack ── */
+.download-stack {
+  margin: 20px 0 12px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.apk-download-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.apk-download-grid .button {
+  width: 100%;
+  padding: 0.68rem 0.6rem;
+  font-size: 0.84rem;
+  white-space: nowrap;
+  gap: 0.45rem;
+}
+
+.apk-download-grid .button small {
+  font-size: 0.72rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.button-linux-full {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  background: var(--surface-card);
+  color: var(--soft);
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: not-allowed;
+  opacity: 0.78;
+  transition: all 180ms var(--ease-effects);
+}
+
+.button-linux-full img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.7);
+}
+
+.button-linux-full .badge-tag {
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--surface-highest);
+  color: var(--muted);
+  font: 700 0.65rem "DM Mono";
+  text-transform: uppercase;
+}
+
+.secondary-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.secondary-actions-grid .button {
+  width: 100%;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 680px) {
+  .apk-download-grid {
+    grid-template-columns: 1fr;
+  }
+  .secondary-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Vertical Timeline Roadmap ── */
+.timeline-container {
+  position: relative;
+  max-width: 960px;
+  margin: 40px auto 24px;
+  padding-left: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 14px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--violet) 65%, var(--line) 100%);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 16px var(--primary-glow);
+  display: grid;
+  place-items: center;
+  transition: transform 220ms var(--ease-spatial), border-color 220ms var(--ease-spatial);
+}
+
+.timeline-item.is-active .timeline-dot {
+  background: var(--primary);
+  border-color: #ffffff;
+  animation: pulse-ring 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 210, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+}
+
+.timeline-dot svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--primary-ink);
+}
+
+.timeline-item:not(.is-active) .timeline-dot {
+  border-color: var(--line-strong);
+  background: var(--surface-high);
+}
+
+.timeline-item:not(.is-active) .timeline-dot svg {
+  fill: var(--soft);
+  stroke: var(--soft);
+}
+
+.timeline-card {
+  width: 100%;
+  padding: clamp(24px, 3.5vw, 36px);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background: var(--surface-card);
-  transition: all 260ms var(--ease-spring);
+  box-shadow: var(--shadow-sm);
+  transition: transform 240ms var(--ease-spatial), border-color 240ms var(--ease-spatial), box-shadow 240ms var(--ease-spatial);
 }
 
-.future-card:hover {
-  transform: translateY(-4px);
+.timeline-item:hover .timeline-card {
+  transform: translateX(4px);
   border-color: var(--line-strong);
   box-shadow: var(--shadow);
 }
 
-.future-card h3 { margin: 16px 0 12px; font-size: 2rem; font-weight: 700; }
-.future-card p { color: var(--soft); font-size: 0.92rem; line-height: 1.6; }
-
-.future-card ul {
-  margin: auto 0 0;
-  padding: 20px 0 0;
-  list-style: none;
+.timeline-item.is-active .timeline-card {
+  border-color: color-mix(in srgb, var(--primary) 38%, var(--line));
+  background: linear-gradient(145deg, var(--surface-card), color-mix(in srgb, var(--primary) 6%, var(--surface-card)));
+  box-shadow: 0 12px 36px -10px var(--primary-glow);
 }
 
-.future-card li {
-  padding: 8px 0;
-  border-top: 1px solid var(--line);
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.timeline-version-tag {
+  font: 700 0.72rem "DM Mono";
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.timeline-card h3 {
+  margin: 4px 0 10px;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.timeline-lead {
+  margin: 0 0 18px;
   color: var(--soft);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.timeline-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: var(--soft);
+}
+
+.timeline-feature-item svg {
+  flex-shrink: 0;
+  color: var(--success);
+}
+
+.timeline-feature-item.in-progress svg {
+  color: var(--primary);
+}
+
+.timeline-feature-item.planned svg {
+  color: var(--violet);
+}
+
+.timeline-feature-item strong {
+  color: var(--ink);
   font-weight: 600;
 }
 
-.future-card li::before {
-  content: "↳";
-  margin-right: 8px;
-  color: var(--primary);
-  font-weight: 800;
-}
-
-.future-symbol {
-  position: absolute;
-  right: 22px;
-  top: 22px;
-  width: 76px;
-  height: 76px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-l);
-  color: var(--primary);
-  background: var(--primary-soft);
-  transition: transform 220ms var(--ease-spatial);
-}
-
-.future-card:hover .future-symbol { transform: scale(1.08) rotate(3deg); }
-.future-symbol svg { width: 40px; height: 40px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.future-card.search .future-symbol { color: var(--violet); background: var(--violet-soft); }
-.future-card.chat { background: linear-gradient(145deg, var(--surface-card), color-mix(in srgb, var(--violet) 8%, var(--surface-card))); }
-.future-card.chat .future-symbol { color: var(--violet); background: var(--violet-soft); }
-
 .open-promise {
-  margin-top: 18px;
+  margin-top: 24px;
   padding: 32px 36px;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -963,6 +1196,7 @@ h1 em {
 .result-card p { margin-bottom: 8px; color: var(--soft); font-size: 0.85rem; }
 .file-name { color: var(--muted); font: 700 0.7rem "DM Mono"; }
 .computed-hash { color: var(--soft); font: 500 0.68rem/1.5 "DM Mono"; overflow-wrap: anywhere; }
+
 
 /* ── Support Block (Patreon & Donations) ── */
 .support-section { border-block: 1px solid var(--line); background: var(--surface-soft); }
