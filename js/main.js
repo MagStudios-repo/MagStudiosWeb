@@ -155,10 +155,21 @@
       });
     }
 
-    // ── Verificador de integridad SHA-256 de APKs ──
+    // ── Verificador de autenticidad e integridad de APKs ──
+    // Un hash calculado por sí solo NO prueba que una APK sea oficial. Solo se
+    // considera válida cuando coincide de forma exacta con un asset declarado
+    // en el manifiesto público que utiliza el actualizador de MagPlayer+.
     var dropzone = byId('dropzone');
     var apkInput = byId('apk-input');
     var verifyResult = byId('verify-result');
+    var officialManifestUrl =
+      'https://raw.githubusercontent.com/MagStudios-repo/MagPlayerPlus/main/release/update.json';
+    var officialManifestPromise = null;
+    var architectureLabels = {
+      'arm64-v8a': 'ARM64',
+      'armeabi-v7a': 'ARMv7',
+      'x86_64': 'x86_64',
+    };
 
     function formatBytes(bytes) {
       if (bytes === 0) return '0 Bytes';
@@ -174,9 +185,62 @@
       return div.innerHTML;
     }
 
+    function showVerificationError(title, message) {
+      if (!verifyResult) return;
+      verifyResult.innerHTML =
+        '<div class="result-card bad">' +
+          '<h3>' + escapeHtml(title) + '</h3>' +
+          '<p>' + escapeHtml(message) + '</p>' +
+        '</div>';
+    }
+
+    function loadOfficialAssets() {
+      if (officialManifestPromise) return officialManifestPromise;
+
+      officialManifestPromise = window.fetch(officialManifestUrl, {
+        cache: 'no-store',
+        headers: { Accept: 'application/json' },
+      }).then(function (response) {
+        if (!response.ok) throw new Error('El manifiesto oficial no respondió.');
+        return response.json();
+      }).then(function (manifest) {
+        if (!manifest || typeof manifest.versionName !== 'string' || !manifest.assets) {
+          throw new Error('El manifiesto oficial tiene un formato inválido.');
+        }
+
+        var assets = Object.keys(manifest.assets).map(function (architecture) {
+          var asset = manifest.assets[architecture] || {};
+          return {
+            architecture: architecture,
+            sha256: typeof asset.sha256 === 'string' ? asset.sha256.toLowerCase() : '',
+            size: Number(asset.size),
+            versionName: manifest.versionName,
+          };
+        }).filter(function (asset) {
+          return /^[a-f0-9]{64}$/.test(asset.sha256) &&
+            Number.isSafeInteger(asset.size) && asset.size > 0;
+        });
+
+        if (!assets.length) throw new Error('No hay APKs verificables en el manifiesto.');
+        return assets;
+      }).catch(function (error) {
+        officialManifestPromise = null;
+        throw error;
+      });
+
+      return officialManifestPromise;
+    }
+
     function processApkFile(file) {
       if (!verifyResult) return;
       if (!file) return;
+      if (!/\.apk$/i.test(file.name || '')) {
+        showVerificationError(
+          'Archivo no compatible',
+          'Seleccioná un archivo APK para comprobarlo contra las publicaciones oficiales.',
+        );
+        return;
+      }
 
       verifyResult.innerHTML =
         '<div class="result-card">' +
@@ -197,24 +261,44 @@
           return;
         }
 
-        window.crypto.subtle.digest('SHA-256', buffer).then(function (hashBuffer) {
+        Promise.all([
+          window.crypto.subtle.digest('SHA-256', buffer),
+          loadOfficialAssets(),
+        ]).then(function (results) {
+          var hashBuffer = results[0];
+          var officialAssets = results[1];
           var hashArray = Array.from(new Uint8Array(hashBuffer));
           var hashHex = hashArray.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+          var matchingAsset = officialAssets.find(function (asset) {
+            return asset.sha256 === hashHex && asset.size === file.size;
+          });
+
+          if (!matchingAsset) {
+            verifyResult.innerHTML =
+              '<div class="result-card bad">' +
+                '<span class="file-name">' + escapeHtml(file.name) + ' · ' + formatBytes(file.size) + '</span>' +
+                '<h3>APK no reconocida como oficial</h3>' +
+                '<p>Su hash o tamaño no coincide con ninguna APK del manifiesto oficial actual. No la instales como MagPlayer+ oficial.</p>' +
+                '<code class="computed-hash">' + hashHex + '</code>' +
+              '</div>';
+            return;
+          }
+
+          var architecture = architectureLabels[matchingAsset.architecture] || matchingAsset.architecture;
 
           verifyResult.innerHTML =
             '<div class="result-card ok">' +
               '<span class="file-name">' + escapeHtml(file.name) + ' · ' + formatBytes(file.size) + '</span>' +
-              '<h3>Huella SHA-256 calculada</h3>' +
-              '<p>Verificá que coincida con el valor publicado en el repositorio oficial de GitHub:</p>' +
+              '<h3>APK oficial de MagPlayer+ verificada</h3>' +
+              '<p>Versión ' + escapeHtml(matchingAsset.versionName) + ' · ' + escapeHtml(architecture) + '. El hash y el tamaño coinciden con la publicación oficial.</p>' +
               '<code class="computed-hash">' + hashHex + '</code>' +
             '</div>';
-          showToast('Hash SHA-256 calculado correctamente');
+          showToast('APK oficial verificada correctamente');
         }).catch(function () {
-          verifyResult.innerHTML =
-            '<div class="result-card bad">' +
-              '<h3>Error de cálculo</h3>' +
-              '<p>No se pudo calcular la huella digital del archivo seleccionado.</p>' +
-            '</div>';
+          showVerificationError(
+            'No se pudo verificar la APK',
+            'No se pudo cargar el manifiesto oficial o calcular la huella. No la consideres oficial.',
+          );
         });
       };
 
