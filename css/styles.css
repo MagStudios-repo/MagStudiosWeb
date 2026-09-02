@@ -935,6 +935,8 @@ h1 em {
   font-size: 0.86rem;
 }
 
+.detail-intro .secondary-actions-grid { grid-template-columns: repeat(3, 1fr); }
+
 @media (max-width: 680px) {
   .apk-download-grid {
     grid-template-columns: 1fr;
@@ -1196,6 +1198,58 @@ h1 em {
 .result-card p { margin-bottom: 8px; color: var(--soft); font-size: 0.85rem; }
 .file-name { color: var(--muted); font: 700 0.7rem "DM Mono"; }
 .computed-hash { color: var(--soft); font: 500 0.68rem/1.5 "DM Mono"; overflow-wrap: anywhere; }
+
+/* ── Guía de uso ── */
+.guide-hero { padding: clamp(76px, 12vw, 156px) 0 clamp(46px, 7vw, 82px); border-bottom: 1px solid var(--line); }
+.guide-hero > div { max-width: 840px; }
+.guide-hero h1 { max-width: 760px; margin: 12px 0 20px; font-size: clamp(2.8rem, 7vw, 5.6rem); }
+.guide-hero h1 em { color: var(--primary); font-style: normal; }
+.guide-hero p:not(.eyebrow) { max-width: 650px; color: var(--soft); font-size: clamp(1rem, 2vw, 1.16rem); }
+.guide-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.guide-page { display: grid; grid-template-columns: 210px minmax(0, 760px); justify-content: center; gap: clamp(36px, 7vw, 90px); padding-block: clamp(42px, 7vw, 92px); }
+.guide-toc { position: sticky; top: 92px; align-self: start; display: grid; gap: 8px; padding-left: 14px; border-left: 1px solid var(--line-strong); }
+.guide-toc p { margin: 0 0 4px; color: var(--muted); font: 700 0.69rem "DM Mono"; letter-spacing: .08em; text-transform: uppercase; }
+.guide-toc a { color: var(--soft); font-size: .84rem; line-height: 1.3; text-decoration: none; }
+.guide-toc a:hover, .guide-toc a:focus-visible { color: var(--primary); }
+.guide-article { min-width: 0; }
+.guide-article section { padding-block: 34px; border-bottom: 1px solid var(--line); }
+.guide-article section:first-of-type { padding-top: 20px; }
+.guide-article h2 { margin: 6px 0 18px; font-size: clamp(1.8rem, 4vw, 2.7rem); }
+.guide-article h3 { margin: 30px 0 10px; font-size: 1.12rem; letter-spacing: -.02em; }
+.guide-article p { color: var(--soft); }
+.guide-article a { color: var(--primary); text-underline-offset: 3px; }
+.guide-number { margin: 0; color: var(--primary) !important; font: 700 .72rem "DM Mono"; letter-spacing: .08em; }
+.guide-steps { display: grid; gap: 12px; margin: 18px 0; padding: 0; counter-reset: guide-step; list-style: none; }
+.guide-steps li { position: relative; padding: 13px 16px 13px 54px; border: 1px solid var(--line); border-radius: var(--radius-m); background: color-mix(in srgb, var(--surface-card) 92%, transparent); color: var(--soft); }
+.guide-steps li::before { counter-increment: guide-step; content: counter(guide-step); position: absolute; top: 13px; left: 16px; display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; background: var(--primary-soft); color: var(--primary); font: 700 .72rem "DM Mono"; }
+.guide-note, .guide-warning, .guide-contact { margin: 22px 0; padding: 20px; border-radius: var(--radius-l); }
+.guide-note { border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--line)); background: color-mix(in srgb, var(--primary-soft) 42%, var(--surface-card)); }
+.guide-warning { border: 1px solid color-mix(in srgb, var(--warning) 34%, var(--line)); background: color-mix(in srgb, var(--warning-soft) 38%, var(--surface-card)); color: var(--soft); }
+.guide-note strong, .guide-warning strong, .guide-contact strong { display: block; color: var(--ink); font-family: "Sora", sans-serif; }
+.guide-note p, .guide-contact p { margin: 6px 0 0; }
+.guide-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 20px 0; }
+.guide-cards div { display: grid; gap: 3px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius-m); background: var(--surface-card); }
+.guide-cards strong { color: var(--ink); }
+.guide-cards span { color: var(--muted); font-size: .82rem; line-height: 1.4; }
+.guide-faq { display: grid; gap: 10px; margin: 20px 0; }
+.guide-faq div { padding: 16px; border-left: 2px solid var(--primary); background: var(--surface-card); }
+.guide-faq dt { color: var(--ink); font-weight: 800; }
+.guide-faq dd { margin: 6px 0 0; color: var(--soft); font-size: .9rem; }
+.guide-contact { background: var(--surface-high); }
+.guide-contact .button { margin-top: 16px; }
+
+@media (max-width: 800px) {
+  .guide-page { display: block; padding-top: 34px; }
+  .guide-toc { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 26px; }
+  .guide-toc p { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .guide-hero { padding-top: 58px; }
+  .guide-toc { grid-template-columns: 1fr; }
+  .guide-cards { grid-template-columns: 1fr; }
+  .guide-steps li { padding-left: 50px; }
+}
 
 
 /* ── Support Block (Patreon & Donations) ── */

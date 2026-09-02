@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía fácil de MagPlayer+ · MagStudios</title>
+  <meta name="description" content="Guía paso a paso de MagPlayer+ para instalar la app, dar permisos, añadir listas M3U o Xtream, usar favoritos, MultiView y actualizaciones." />
+  <meta id="theme-color-meta" name="theme-color" content="#0a0e12" />
+  <link rel="icon" type="image/png" href="assets/logo-square.png" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('magplayer-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (_) { document.documentElement.dataset.theme = 'dark'; }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar a la guía</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="studio-brand" href="index.html" aria-label="Volver a MagStudios">
+        <img class="studio-logo" src="assets/logo.png" alt="" width="559" height="447" />
+        <span>Mag<strong>Studios</strong></span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones de la guía">
+        <a href="#instalar">Instalar</a><a href="#listas">Listas</a><a href="#usar">Usar la app</a><a href="#ayuda">Ayuda</a>
+      </nav>
+      <div class="nav-actions">
+        <details class="mobile-menu">
+          <summary aria-label="Abrir menú de navegación"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></summary>
+          <nav aria-label="Navegación móvil"><a href="#instalar">Instalar</a><a href="#listas">Listas</a><a href="#usar">Usar la app</a><a href="#ayuda">Ayuda</a><a href="magplayer.html">MagPlayer+</a></nav>
+        </details>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+          <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36A5.5 5.5 0 0 1 12.36 3.1 9.2 9.2 0 0 0 12 3Z"/></svg>
+          <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0-10Zm0-5 1.8 2.6L17 3.5l-.3 3.2 3.2-.3-1.1 3 2.6 1.8-2.6 1.8 1.1 3-3.2-.3.3 3.2-3.2-1.1L12 22l-1.8-2.6-3.2 1.1.3-3.2-3.2.3 1.1-3L2.6 12l2.6-1.8-1.1-3 3.2.3L7 4.3l3.2 1.1L12 2Z"/></svg>
+        </button>
+        <a class="button button-primary top-download" href="index.html#descargar">Descargar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="guide-hero">
+      <div class="page-shell">
+        <p class="eyebrow"><span class="pulse"></span> Manual para principiantes</p>
+        <h1>Tu primera vez con<br /><em>MagPlayer+.</em></h1>
+        <p>Una guía tranquila, paso a paso. No necesitas saber de tecnología: empieza por instalar la app y sigue el orden que te sirva.</p>
+        <div class="guide-hero-actions"><a class="button button-primary" href="#instalar">Empezar la guía</a><a class="button button-quiet" href="magplayer.html">Ver MagPlayer+</a></div>
+      </div>
+    </section>
+
+    <section class="guide-page page-shell">
+      <aside class="guide-toc" aria-label="Índice de la guía">
+        <p>En esta guía</p>
+        <a href="#instalar">Instalar y permisos</a>
+        <a href="#empezar">Conocer la pantalla</a>
+        <a href="#listas">Agregar listas</a>
+        <a href="#usar">Ver y organizar</a>
+        <a href="#herramientas">Funciones especiales</a>
+        <a href="#actualizar">Actualizar</a>
+        <a href="#ayuda">Problemas frecuentes</a>
+      </aside>
+
+      <article class="guide-article">
+        <div class="guide-note">
+          <strong>Antes de empezar</strong>
+          <p>MagPlayer+ es un reproductor. No trae canales, películas, series ni listas. Tú agregas los archivos y las fuentes que tienes derecho a usar.</p>
+        </div>
+
+        <section id="instalar">
+          <p class="guide-number">01 · INSTALAR</p>
+          <h2>Descargar e instalar la app.</h2>
+          <p>Descarga MagPlayer+ solamente desde la <a href="index.html#descargar">web oficial de MagStudios</a> o desde <strong>Ajustes &gt; Actualizaciones</strong> dentro de la app.</p>
+          <ol class="guide-steps">
+            <li><strong>Elige una APK.</strong> ARM64 funciona en casi todos los celulares y TVs modernos. ARMv7 es para aparatos más viejos. x86_64 es para emuladores o algunas computadoras.</li>
+            <li><strong>Abre la descarga.</strong> La encontrarás en la notificación o en la carpeta Descargas.</li>
+            <li><strong>Permite la instalación.</strong> Si Android bloquea el archivo, toca Ajustes y activa <em>Permitir desde esta fuente</em>.</li>
+            <li><strong>Toca Instalar.</strong> Al terminar, toca Abrir.</li>
+          </ol>
+          <div class="guide-warning"><strong>Importante:</strong> no descargues APKs reenviadas por Drive, Mega, MediaFire o enlaces de desconocidos. Una APK oficial conserva tu información al actualizar; una APK ajena no puede reemplazarla.</div>
+          <h3>Dar permisos</h3>
+          <p>Cuando Android pregunte si MagPlayer+ puede ver música y vídeos, toca <strong>Permitir</strong>. Es necesario para mostrar tus archivos locales. Si dijiste que no, abre Ajustes del dispositivo &gt; Apps &gt; MagPlayer+ &gt; Permisos, permite música y vídeos, y luego toca <strong>Volver a escanear</strong> dentro de la app.</p>
+        </section>
+
+        <section id="empezar">
+          <p class="guide-number">02 · PRIMER RECORRIDO</p>
+          <h2>Conocer las partes de la app.</h2>
+          <p>Al abrir MagPlayer+ no pasa nada malo si ves espacios vacíos. Primero debes añadir una fuente o dar permiso para leer tus archivos.</p>
+          <div class="guide-cards">
+            <div><strong>Inicio</strong><span>Accesos y contenido reciente.</span></div>
+            <div><strong>Biblioteca</strong><span>Favoritos, listas, música y vídeos locales.</span></div>
+            <div><strong>Catálogo</strong><span>Películas y series de tus fuentes.</span></div>
+            <div><strong>En vivo</strong><span>Canales de tus listas IPTV.</span></div>
+            <div><strong>Ajustes</strong><span>Permisos, carpetas, actualización y soporte.</span></div>
+          </div>
+          <p>En una TV usa las flechas del control para moverte y el botón del centro, normalmente <strong>OK</strong>, para elegir. El botón Atrás cierra menús o vuelve a la pantalla anterior.</p>
+        </section>
+
+        <section id="listas">
+          <p class="guide-number">03 · TUS FUENTES</p>
+          <h2>Agregar una lista IPTV.</h2>
+          <p>Una lista es como una libreta de direcciones: le dice a MagPlayer+ dónde están los canales o contenidos de una fuente que tú eliges.</p>
+          <h3>Opción A: pegar un enlace M3U</h3>
+          <ol class="guide-steps">
+            <li>Entra en <strong>Biblioteca &gt; Mis listas</strong>.</li>
+            <li>Toca <strong>Añadir</strong> y después <strong>Enlace M3U o Xtream</strong>.</li>
+            <li>Pega el enlace recibido. Suele terminar en <code>.m3u</code>, <code>.m3u8</code> o incluir <code>get.php</code>.</li>
+            <li>Escribe un nombre fácil, por ejemplo <em>TV de casa</em>.</li>
+            <li>Toca <strong>Verificar</strong>. La app revisa que el enlace responda.</li>
+            <li>Si el resultado parece correcto, toca <strong>Guardar fuente</strong>.</li>
+            <li>Elige qué categorías quieres descargar y espera a que termine.</li>
+          </ol>
+          <h3>Opción B: conectar un servidor Xtream</h3>
+          <ol class="guide-steps">
+            <li>En <strong>Mis listas &gt; Añadir</strong>, elige <strong>Servidor Xtream</strong>.</li>
+            <li>Completa Host, Puerto, Usuario y Contraseña exactamente como te los dieron.</li>
+            <li>Deja <strong>Formato preferido: Automático</strong> al principio.</li>
+            <li>Toca <strong>Verificar cuenta</strong> y luego <strong>Guardar fuente</strong>.</li>
+            <li>Espera la descarga de categorías antes de buscar contenido.</li>
+          </ol>
+          <p>La contraseña se guarda en el almacén seguro del dispositivo. No se muestra en las pantallas normales de la app.</p>
+          <h3>Opción C: importar un archivo</h3>
+          <ol class="guide-steps">
+            <li>Ve a <strong>Mis listas &gt; Añadir &gt; Archivo M3U o TXT</strong>.</li>
+            <li>Toca <strong>Elegir archivo</strong>.</li>
+            <li>Elige tu archivo <code>.m3u</code>, <code>.m3u8</code> o <code>.txt</code>.</li>
+            <li>Marca las listas que quieras guardar y confirma.</li>
+          </ol>
+          <div class="guide-note"><strong>¿La app pregunta por HTTP?</strong><p>Un enlace que empieza por <code>http://</code> no está cifrado. Es mejor usar <code>https://</code>. Acepta HTTP solo si confías en esa fuente.</p></div>
+          <h3>Administrar una lista</h3>
+          <p>Abre una lista desde Mis listas para cambiar su nombre, apagarla sin borrarla, revalidarla, actualizar categorías, elegir qué categorías ver o eliminarla. Borrar una lista la quita de MagPlayer+, no borra nada del servidor original.</p>
+        </section>
+
+        <section id="usar">
+          <p class="guide-number">04 · REPRODUCIR Y ORDENAR</p>
+          <h2>Ver canales, películas y series.</h2>
+          <h3>Canales en vivo</h3>
+          <p>Entra en <strong>En vivo</strong>, elige una categoría, toca un canal y después <strong>Reproducir</strong>. Toca la pantalla una vez para ver los controles y otra vez para ocultarlos.</p>
+          <h3>Películas y series</h3>
+          <p>Entra en <strong>Catálogo</strong>, usa categorías o la lupa para buscar, toca una portada y elige <strong>Reproducir</strong>. En una serie primero abre la temporada y después el episodio.</p>
+          <h3>Favoritos</h3>
+          <p>Cuando veas un canal, película o serie que te gusta, abre su ficha y toca la estrella <strong>Favorito</strong>. La estrella también aparece entre los controles del reproductor. Después encontrarás todo en <strong>Biblioteca &gt; Favoritos</strong>, junto a tu música y vídeos locales favoritos.</p>
+          <h3>Música y vídeos del dispositivo</h3>
+          <p>En Biblioteca abre <strong>Música</strong> o <strong>Vídeos</strong>. Si un archivo no aparece, ve a <strong>Ajustes &gt; Carpetas</strong>, revisa que su carpeta esté activa y toca <strong>Volver a escanear</strong>.</p>
+        </section>
+
+        <section id="herramientas">
+          <p class="guide-number">05 · FUNCIONES ESPECIALES</p>
+          <h2>MultiView, Wi‑Fi y control parental.</h2>
+          <h3>MultiView</h3>
+          <ol class="guide-steps">
+            <li>Entra en <strong>Biblioteca &gt; Mis listas</strong>.</li>
+            <li>Toca la tarjeta <strong>MultiView</strong>.</li>
+            <li>Elige un canal para cada ventana.</li>
+            <li>Elige cuál ventana quieres escuchar.</li>
+          </ol>
+          <p>Con la pantalla vertical se usan 2 ventanas. Con la pantalla horizontal puedes usar 2 o 4. En TV, las flechas cambian el foco, OK elige o amplía y el botón de menú abre controles horizontales. Si tu dispositivo no soporta cuatro transmisiones, la app dejará dos para no trabarse.</p>
+          <h3>Pasar archivos por Wi‑Fi</h3>
+          <ol class="guide-steps">
+            <li>Conecta los dos equipos a la misma red Wi‑Fi.</li>
+            <li>En el equipo que recibe, abre <strong>Ajustes &gt; Compartir por WiFi</strong>.</li>
+            <li>Copia la dirección que muestra la app.</li>
+            <li>En la PC o el otro celular, abre un navegador y escribe esa dirección.</li>
+            <li>Elige o arrastra el vídeo, música o lista que quieres pasar.</li>
+            <li>Vuelve a MagPlayer+ y revisa <strong>Archivos transferidos</strong>.</li>
+          </ol>
+          <p>Mantén abierta la pantalla de compartir mientras subes archivos. Al cerrarla, el servidor Wi‑Fi se apaga para proteger tu red.</p>
+          <h3>Control parental</h3>
+          <p>Ve a <strong>Ajustes &gt; Control parental</strong>, crea un PIN y activa el filtro. El filtro analiza títulos, categorías y sinopsis, también en la búsqueda. No compartas ese PIN con niños.</p>
+        </section>
+
+        <section id="actualizar">
+          <p class="guide-number">06 · MANTENERSE AL DÍA</p>
+          <h2>Actualizar de forma segura.</h2>
+          <ol class="guide-steps">
+            <li>Entra en <strong>Ajustes &gt; Actualizaciones</strong>.</li>
+            <li>Espera la comprobación. Si dice que ya tienes la versión más reciente, no hagas nada.</li>
+            <li>Si hay una versión nueva, toca <strong>Descargar actualización</strong>.</li>
+            <li>Espera a que MagPlayer+ descargue y verifique el archivo.</li>
+            <li>Toca <strong>Instalar actualización</strong> y confirma en la pantalla de Android.</li>
+          </ol>
+          <p>La app elige automáticamente la APK correcta para tu dispositivo y revisa su huella antes de pedir a Android que la instale.</p>
+        </section>
+
+        <section id="ayuda">
+          <p class="guide-number">07 · SI ALGO SALE MAL</p>
+          <h2>Problemas comunes.</h2>
+          <dl class="guide-faq">
+            <div><dt>El servidor respondió 404</dt><dd>La dirección ya no existe, cambió o no tienes acceso. Revisa el enlace. En Xtream prueba Automático, luego MPEG-TS o HLS.</dd></div>
+            <div><dt>No aparecen mis vídeos o música</dt><dd>Revisa los permisos de Android, entra en Ajustes &gt; Carpetas y toca Volver a escanear.</dd></div>
+            <div><dt>La lista tarda mucho</dt><dd>Las listas grandes pueden tener miles de elementos. Usa Wi‑Fi, deja la app abierta y elige solo las categorías que necesites.</dd></div>
+            <div><dt>No aparecen episodios de una serie</dt><dd>Desde Mis listas abre la fuente y toca Actualizar categorías. Si sigue igual, el servidor no está entregando sus episodios correctamente.</dd></div>
+            <div><dt>El vídeo se corta o no tiene sonido</dt><dd>Prueba otro contenido y revisa tu conexión. En Ajustes deja motor y decodificación en Automático; si continúa, prueba el motor de respaldo.</dd></div>
+            <div><dt>No puedo instalar una actualización</dt><dd>Android necesita permiso para que MagPlayer+ instale actualizaciones. Actívalo cuando el sistema lo pida, vuelve a la app y toca Instalar de nuevo.</dd></div>
+          </dl>
+          <div class="guide-contact"><strong>¿Aún necesitas ayuda?</strong><p>En la app entra en <em>Ajustes &gt; MagStudios y soporte</em>. Allí tienes la web, GitHub, correo, redes y la comunidad de Telegram.</p><a class="button button-primary" href="mailto:soportemagstudiosoficial@gmail.com">Escribir a soporte</a></div>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="page-shell footer-grid"><div><a class="studio-brand footer-brand" href="index.html"><img class="studio-logo" src="assets/logo.png" alt="" width="559" height="447" /><span>Mag<strong>Studios</strong></span></a><p>Estudio independiente creador de aplicaciones open source para móvil, televisión y escritorio.</p></div><nav aria-label="MagPlayer+"><a href="magplayer.html">MagPlayer+</a><a href="index.html#descargar">Descargar</a><a href="index.html#verificar">Verificar APK</a></nav><nav aria-label="Información y contacto"><a href="https://github.com/MagStudios-repo" target="_blank" rel="noopener">GitHub Oficial</a><a href="mailto:soportemagstudiosoficial@gmail.com">Correo de soporte</a><a href="legal.html">Información legal</a><span>© <span id="year"></span> MagStudios</span></nav></div></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

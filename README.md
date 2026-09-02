@@ -34,6 +34,11 @@ instalada, la aplicación comprueba y descarga sus actualizaciones desde
 que sean verificables, pero MagStudios no distribuye enlaces mediante mirrors,
 Drive, Mega ni otras tiendas.
 
+Para quienes usan la aplicación por primera vez, el sitio incluye una
+[guía paso a paso de MagPlayer+](https://magstudiosweb.vercel.app/guia.html):
+instalación, permisos, listas M3U/Xtream, biblioteca, favoritos, MultiView,
+transferencias Wi-Fi y actualizaciones.
+
 ## Otros proyectos
 
 ### MagLinkTV y MagLinkTV+
